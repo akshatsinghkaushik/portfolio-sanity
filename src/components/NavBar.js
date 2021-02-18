@@ -5,11 +5,11 @@ import { SocialIcon } from 'react-social-icons';
 export default function NavBar() {
   return (
     <header className="bg-gray-500 bg-opacity-100 shadow-inner">
-      <div className="h-full container mx-auto flex justify-between navigation">
+      <div className="h-full container mx-auto flex justify-between navigation items-center">
         <nav className="flex justify-between">
           <NavLink
             activeClassName="text-white "
-            className="inline-flex items-center my-6 px-1 mr-5 text-blue-100 rounded-xl text-4xl md:text-5xl sm:text-5xl font-bold cursive tracking-widest transition duration-300 ease-in-out border-4 border-transparent rounded-lg transform hover:scale-110 hover:text-gray-300"
+            className="inline-flex items-center my-6 ml-3 px-1 mr-5 text-blue-100 rounded-xl text-4xl md:text-5xl sm:text-5xl font-bold cursive tracking-widest transition duration-300 ease-in-out border-4 border-transparent rounded-lg transform hover:scale-110 hover:text-gray-300"
             to="/"
             exact
           >
@@ -37,20 +37,20 @@ export default function NavBar() {
             About Me
           </NavLink>
         </nav>
-        <div className="inline-flex flex-row pt-2 px-3 my-4">
+        <div className="inline-flex flex-row px-3 ">
           <SocialIcon
             url="https://github.com/akshatsinghkaushik"
             className="mr-4 transition duration-500 ease-in-out shadow-2xl transform hover:scale-125 border-4 border-white"
             target="_blank"
             fgColor="#fff"
-            style={{ height: 50, width: 50, borderRadius: '50%' }}
+            style={{ height: 40, width: 40, borderRadius: '50%' }}
           />
           <SocialIcon
             url="https://www.linkedin.com/in/a-s-kaushik/"
             className="mr-4 transition duration-500 ease-in-out shadow-2xl transform hover:scale-125 border-4 border-white"
             target="_blank"
             fgColor="#fff"
-            style={{ height: 50, width: 50, borderRadius: '50%' }}
+            style={{ height: 40, width: 40, borderRadius: '50%' }}
           />
           {/* <SocialIcon
             url=""
