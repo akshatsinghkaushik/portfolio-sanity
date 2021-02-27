@@ -4,6 +4,17 @@ import sanityClient from '../client';
 import ReactLoading from 'react-loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPointRight } from '@fortawesome/free-regular-svg-icons';
+import {
+  faAndroid,
+  faReact,
+  faBattleNet,
+} from '@fortawesome/free-brands-svg-icons';
+
+const tags = new Map([
+  ['Android', faAndroid],
+  ['React', faReact],
+  ['Sanity', faBattleNet],
+]);
 
 export default function Projects() {
   const [projectData, setProjectData] = useState([]);
@@ -71,7 +82,7 @@ export default function Projects() {
                     {new Date(project.date).toLocaleDateString()}
                   </span>
                   <span>
-                    <strong className="font-bold">Company</strong>:{' '}
+                    <strong className="font-bold">Location</strong>:{' '}
                     {project.place}
                   </span>
                   <span>
@@ -96,6 +107,32 @@ export default function Projects() {
                       icon={faHandPointRight}
                     />
                   </a>
+                  <div className="flex flex-row pt-3 items-center">
+                    {project.tags.map((tag) => {
+                      const istag = tags.has(tag);
+
+                      return (
+                        <div className="rounded py-1 px-3 mx-2 bg-gray-300 transform transition duration-1000 ease-in-out hover:scale-125">
+                          {istag ? (
+                            <span className="pr-1">
+                              <FontAwesomeIcon
+                                role="image"
+                                aria-label="right pointer"
+                                icon={tags.get(tag)}
+                                size="lg"
+                              />
+                            </span>
+                          ) : (
+                            ''
+                          )}
+
+                          <span className="text-black font-semibold">
+                            {tag}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </article>
             ))}
